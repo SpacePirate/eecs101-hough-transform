@@ -203,7 +203,7 @@ void DIP(unsigned char image[][COLS], char *fname, unsigned char t)
     Line 3: rho[312, 321], theta[13, 14], peak @ 312, 14
     */
 
-	for(y = 0; y < ROWS; y++)
+    for(y = 0; y < ROWS; y++)
     {
         for(x = 0; x < COLS; x++)
         {
@@ -219,9 +219,9 @@ void DIP(unsigned char image[][COLS], char *fname, unsigned char t)
             if(find_edge(x, y, 312, 14))
                 {hough[y][x]=255;}
         }
-	}
+    }
 
-	save_image("hough.ras",hough);
+    save_image("hough.ras",hough);
 
 }
 int find_edge(int x, int y, int rho, int theta)
@@ -246,13 +246,13 @@ void threshold(unsigned char image[][COLS], unsigned char t)
         for(x = 0; x < COLS; x++)
         {
             /* Thresholding */
-			if (image[y][x] >= t)
-			{
+            if (image[y][x] >= t)
+            {
                 image[y][x] = 255;
             }
             /* Disregard background */
-			else
-			{
+            else
+            {
                 image[y][x] = 0;
                 cx += x;
                 cy += y;
